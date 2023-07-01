@@ -6,8 +6,8 @@
 
                  {{-- <h1 class="h3 mb-2 text-gray-800">Internal External Market</h1> --}}
 
-                 {{-- Internal External Market--}}
-                 {!! file_get_contents(public_path('content/eda/4. Internal External Market/Internal External Market.html')) !!}
+                 {{-- Top_Most_Sold_Products --}}
+                 {!! file_get_contents(public_path('content/eda/8. MOST SOLD PRODUCTS/5. Top_Most_Sold_Products_50.html')) !!}
 
 
                 </div>

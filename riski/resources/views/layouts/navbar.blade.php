@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UI Project</title>
+    {{-- <link rel="shortcut icon" href="img/test1.ico" type="image/x-icon"> --}}
+
+    <title>Data Mining Presentation</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,9 +36,11 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
+                    <i class='fab fa-audible'></i>
+                    {{-- <i class="bi bi-clipboard-data"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">Project <sup>UI</sup></div>
+                <div class="sidebar-brand-text mx-3">Data Mining </div>
             </a>
 
             <!-- Divider -->
@@ -61,7 +65,7 @@
 
             <!-- Nav Item - Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTp"
+                <a class="nav-link collapsed" href="{{ url('/transactionPercentage1') }}" data-toggle="collapse" data-target="#collapseTp"
                     aria-expanded="true" aria-controls="collapseTp">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Trasaction Percentage</span>
@@ -69,15 +73,15 @@
                 <div id="collapseTp" class="collapse" aria-labelledby="headingTp" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">In 2010 and 2011</a>
-                        <a class="collapse-item" href="#">By Month in 2010</a>
-                        <a class="collapse-item" href="#">By Month in 2011</a>
+                        <a class="collapse-item" href="{{ url('/transactionPercentage1') }}">In 2010 and 2011</a>
+                        <a class="collapse-item" href="{{ url('/transactionPercentage2') }}">By Month in 2010</a>
+                        <a class="collapse-item" href="{{ url('/transactionPercentage3') }}">By Month in 2011</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUc"
+                <a class="nav-link collapsed" href="{{ url('/uniqueCustomer1') }}" data-toggle="collapse" data-target="#collapseUc"
                     aria-expanded="true" aria-controls="collapseUc">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Unique Customer</span>
@@ -85,26 +89,26 @@
                 <div id="collapseUc" class="collapse" aria-labelledby="headingUc" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">Month in 2011 bar chart</a>
-                        <a class="collapse-item" href="#">Month in 2011 line chart </a>
+                        <a class="collapse-item" href="{{ url('/uniqueCustomer1') }}">Month in 2011 bar chart</a>
+                        <a class="collapse-item" href="{{ url('/uniqueCustomer2') }}">Month in 2011 line chart </a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/amountSales') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Amount sales by country</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/internalExternalMarkert') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Internal External Market</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTci"
+                <a class="nav-link collapsed" href="{{ url('/topCustomerall') }}" data-toggle="collapse" data-target="#collapseTci"
                     aria-expanded="true" aria-controls="collapseTci">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Top Customer in sales amount</span>
@@ -112,17 +116,18 @@
                 <div id="collapseTci" class="collapse" aria-labelledby="headingTci" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">Top_Customers_10</a>
-                        <a class="collapse-item" href="#">Top_Customers_20</a>
-                        <a class="collapse-item" href="#">Top_Customers_30</a>
-                        <a class="collapse-item" href="#">Top_Customers_40</a>
-                        <a class="collapse-item" href="#">Top_Customers_50</a>
+                        <a class="collapse-item" href="{{ url('/topCustomerall') }}">Top_Customers_All</a>
+                        <a class="collapse-item" href="{{ url('/topCustomer1') }}">Top_Customers_10</a>
+                        <a class="collapse-item" href="{{ url('/topCustomer2') }}">Top_Customers_20</a>
+                        <a class="collapse-item" href="{{ url('/topCustomer3') }}">Top_Customers_30</a>
+                        <a class="collapse-item" href="{{ url('/topCustomer4') }}">Top_Customers_40</a>
+                        <a class="collapse-item" href="{{ url('/topCustomer5') }}">Top_Customers_50</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTce"
+                <a class="nav-link collapsed" href="{{ url('/topCostumerEventall') }}" data-toggle="collapse" data-target="#collapseTce"
                     aria-expanded="true" aria-controls="collapseTce">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Top Customer Event Sales</span>
@@ -130,17 +135,18 @@
                 <div id="collapseTce" class="collapse" aria-labelledby="headingTce" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">TC_Event_Sales_10</a>
-                        <a class="collapse-item" href="#">TC_Event_Sales_20</a>
-                        <a class="collapse-item" href="#">TC_Event_Sales_30</a>
-                        <a class="collapse-item" href="#">TC_Event_Sales_40</a>
-                        <a class="collapse-item" href="#">TC_Event_Sales_50</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEventall') }}">TC_Event_Sales_All</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEvent1') }}">TC_Event_Sales_10</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEvent2') }}">TC_Event_Sales_20</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEvent3') }}">TC_Event_Sales_30</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEvent4') }}">TC_Event_Sales_40</a>
+                        <a class="collapse-item" href="{{ url('/topCostumerEvent5') }}">TC_Event_Sales_50</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTpi"
+                <a class="nav-link collapsed" href="{{ url('/topProductall') }}" data-toggle="collapse" data-target="#collapseTpi"
                     aria-expanded="true" aria-controls="collapseTpi">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Top Products In Sales Amount</span>
@@ -148,17 +154,18 @@
                 <div id="collapseTpi" class="collapse" aria-labelledby="headingTpi" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">TP_Event_Sales_10</a>
-                        <a class="collapse-item" href="#">TP_Event_Sales_20</a>
-                        <a class="collapse-item" href="#">TP_Event_Sales_30</a>
-                        <a class="collapse-item" href="#">TP_Event_Sales_40</a>
-                        <a class="collapse-item" href="#">TP_Event_Sales_50</a>
+                        <a class="collapse-item" href="{{ url('/topProductall') }}">TP_Event_Sales_All</a>
+                        <a class="collapse-item" href="{{ url('/topProduct1') }}">TP_Event_Sales_10</a>
+                        <a class="collapse-item" href="{{ url('/topProduct2') }}">TP_Event_Sales_20</a>
+                        <a class="collapse-item" href="{{ url('/topProduct3') }}">TP_Event_Sales_30</a>
+                        <a class="collapse-item" href="{{ url('/topProduct4') }}">TP_Event_Sales_40</a>
+                        <a class="collapse-item" href="{{ url('/topProduct5') }}">TP_Event_Sales_50</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMsp"
+                <a class="nav-link collapsed" href="{{ url('/mostSoldall') }}" data-toggle="collapse" data-target="#collapseMsp"
                     aria-expanded="true" aria-controls="collapseMsp">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Most Sold Products</span>
@@ -166,17 +173,18 @@
                 <div id="collapseMsp" class="collapse" aria-labelledby="headingMsp" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">Most_Sold_Products_10</a>
-                        <a class="collapse-item" href="#">Most_Sold_Products_20</a>
-                        <a class="collapse-item" href="#">Most_Sold_Products_30</a>
-                        <a class="collapse-item" href="#">Most_Sold_Products_40</a>
-                        <a class="collapse-item" href="#">Most_Sold_Products_50</a>
+                        <a class="collapse-item" href="{{ url('/mostSoldall') }}">Most_Sold_Products_All</a>
+                        <a class="collapse-item" href="{{ url('/mostSold1') }}">Most_Sold_Products_10</a>
+                        <a class="collapse-item" href="{{ url('/mostSold2') }}">Most_Sold_Products_20</a>
+                        <a class="collapse-item" href="{{ url('/mostSold3') }}">Most_Sold_Products_30</a>
+                        <a class="collapse-item" href="{{ url('/mostSold4') }}">Most_Sold_Products_40</a>
+                        <a class="collapse-item" href="{{ url('/mostSold5') }}">Most_Sold_Products_50</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTps"
+                <a class="nav-link collapsed" href="{{ url('/topProductSalesall') }}" data-toggle="collapse" data-target="#collapseTps"
                     aria-expanded="true" aria-controls="collapseTps">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Top Products In Sales Amount</span>
@@ -184,11 +192,12 @@
                 <div id="collapseTps" class="collapse" aria-labelledby="headingTps" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">Top_Products_10</a>
-                        <a class="collapse-item" href="#">Top_Products_20</a>
-                        <a class="collapse-item" href="#">Top_Products_30</a>
-                        <a class="collapse-item" href="#">Top_Products_40</a>
-                        <a class="collapse-item" href="#">Top_Products_50</a>
+                        <a class="collapse-item" href="{{ url('/topProductSalesall') }}">Top_Products_All</a>
+                        <a class="collapse-item" href="{{ url('/topProductSales1') }}">Top_Products_10</a>
+                        <a class="collapse-item" href="{{ url('/topProductSales2') }}">Top_Products_20</a>
+                        <a class="collapse-item" href="{{ url('/topProductSales3') }}">Top_Products_30</a>
+                        <a class="collapse-item" href="{{ url('/topProductSales4') }}">Top_Products_40</a>
+                        <a class="collapse-item" href="{{ url('/topProductSales5') }}">Top_Products_50</a>
                     </div>
                 </div>
             </li>
@@ -203,7 +212,7 @@
 
             <!-- Nav Item - Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseC"
+                <a class="nav-link collapsed" href="{{ url('/chartCustomerall') }}" data-toggle="collapse" data-target="#collapseC"
                     aria-expanded="true" aria-controls="collapseC">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Chart Customer Segmentation</span>
@@ -211,15 +220,16 @@
                 <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">chart_3_clusters</a>
-                        <a class="collapse-item" href="#">chart_5_clusters</a>
-                        <a class="collapse-item" href="#">chart_7_clusters</a>
+                        <a class="collapse-item" href="{{ url('/chartCustomerall') }}">chart_All_clusters</a>
+                        <a class="collapse-item" href="{{ url('/chartCustomer1') }}">chart_3_clusters</a>
+                        <a class="collapse-item" href="{{ url('/chartCustomer2') }}">chart_5_clusters</a>
+                        <a class="collapse-item" href="{{ url('/chartCustomer3') }}">chart_7_clusters</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseK"
+                <a class="nav-link collapsed" href="{{ url('/kmeansElbowall') }}" data-toggle="collapse" data-target="#collapseK"
                     aria-expanded="true" aria-controls="collapseK">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Kmeans Elbow</span>
@@ -227,20 +237,21 @@
                 <div id="collapseK" class="collapse" aria-labelledby="headingK" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">kmeans_cluster_plot</a>
-                        <a class="collapse-item" href="#">kmeans_elbow_plot</a>
+                        <a class="collapse-item" href="{{ url('/kmeansElbowall') }}">kmeans_All</a>
+                        <a class="collapse-item" href="{{ url('/kmeansElbow1') }}">kmeans_cluster_plot</a>
+                        <a class="collapse-item" href="{{ url('/kmeansElbow2') }}">kmeans_elbow_plot</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/dbscan') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>DBSCAN</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseS"
+                <a class="nav-link collapsed" href="{{ url('/silhoutteScore1') }}" data-toggle="collapse" data-target="#collapseS"
                     aria-expanded="true" aria-controls="collapseS">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Silhoutte Score 3 5 7 </span>
@@ -248,8 +259,8 @@
                 <div id="collapseS" class="collapse" aria-labelledby="headingS" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="#">Cluster Silhouette</a>
-                        <a class="collapse-item" href="#">Result Clusters</a>
+                        <a class="collapse-item" href="{{ url('/silhoutteScore1') }}">Cluster Silhouette</a>
+                        <a class="collapse-item" href="{{ url('/silhoutteScore2') }}">Result Clusters</a>
                     </div>
                 </div>
             </li>
@@ -264,7 +275,7 @@
 
         <!-- Nav Item - Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQ"
+            <a class="nav-link collapsed" href="{{ url('/qqPlotall') }}" data-toggle="collapse" data-target="#collapseQ"
                 aria-expanded="true" aria-controls="collapseQ">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>QQ Plot RFM</span>
@@ -272,15 +283,16 @@
             <div id="collapseQ" class="collapse" aria-labelledby="headingQ" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Pilih:</h6>
-                    <a class="collapse-item" href="#">QQ_plot_frequency</a>
-                    <a class="collapse-item" href="#">QQ_plot_monetory</a>
-                    <a class="collapse-item" href="#">QQ_plot Recency</a>
+                    <a class="collapse-item" href="{{ url('/qqPlotall') }}">QQ_plot_All</a>
+                    <a class="collapse-item" href="{{ url('/qqPlot1') }}">QQ_plot_frequency</a>
+                    <a class="collapse-item" href="{{ url('/qqPlot2') }}">QQ_plot_monetory</a>
+                    <a class="collapse-item" href="{{ url('/qqPlot3') }}">QQ_plot Recency</a>
                 </div>
             </div>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapserfmB"
+            <a class="nav-link collapsed" href="{{ url('/rfmBoxplot_amount_all') }}" data-toggle="collapse" data-target="#collapserfmB"
                 aria-expanded="true" aria-controls="collapserfmB">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>RFM Boxplot</span>
@@ -288,27 +300,30 @@
             <div id="collapserfmB" class="collapse" aria-labelledby="headingrfmB" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Amount:</h6>
-                    <a class="collapse-item" href="#">chart_amount_3_clusters</a>
-                    <a class="collapse-item" href="#">chart_amount_5_clusters</a>
-                    <a class="collapse-item" href="#">chart_amount_7_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_all') }}">chart_amount_All</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_1') }}">chart_amount_3_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_2') }}">chart_amount_5_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_3') }}">chart_amount_7_clusters</a>
                 </div>
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Frequency:</h6>
-                    <a class="collapse-item" href="#">chart_frequency_3_clusters</a>
-                    <a class="collapse-item" href="#">chart_frequency_5_clusters</a>
-                    <a class="collapse-item" href="#">chart_frequency_7_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_frequency_all') }}">chart_frequency_All</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_frequency_1') }}">chart_frequency_3_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_frequency_2') }}">chart_frequency_5_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_frequency_3') }}">chart_frequency_7_clusters</a>
                 </div>
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Recency:</h6>
-                    <a class="collapse-item" href="#">chart_recency_3_clusters</a>
-                    <a class="collapse-item" href="#">chart_recency_5_clusters</a>
-                    <a class="collapse-item" href="#">chart_recency_7_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_all') }}">chart_recency_All</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_1') }}">chart_recency_3_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_2') }}">chart_recency_5_clusters</a>
+                    <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_3') }}">chart_recency_7_clusters</a>
                 </div>
             </div>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapserfmc"
+            <a class="nav-link collapsed" href="{{ url('/rfmChartall') }}" data-toggle="collapse" data-target="#collapserfmc"
                 aria-expanded="true" aria-controls="collapserfmc">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>RFM Chart</span>
@@ -316,11 +331,12 @@
             <div id="collapserfmc" class="collapse" aria-labelledby="headingrfmc" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Pilih:</h6>
-                    <a class="collapse-item" href="#">Frequency vs Amount</a>
-                    <a class="collapse-item" href="#">Receny vs Amount</a>
-                    <a class="collapse-item" href="#">RFM Log 3D</a>
-                    <a class="collapse-item" href="#">Freq-Log vs Amount-Log </a>
-                    <a class="collapse-item" href="#">Rec-Log vs Amount-Log</a>
+                    <a class="collapse-item" href="{{ url('/rfmChartall') }}">RFM Chart All</a>
+                    <a class="collapse-item" href="{{ url('/rfmChart1') }}">Frequency vs Amount</a>
+                    <a class="collapse-item" href="{{ url('/rfmChart2') }}">Receny vs Amount</a>
+                    <a class="collapse-item" href="{{ url('/rfmChart3') }}">RFM Log 3D</a>
+                    <a class="collapse-item" href="{{ url('/rfmChart4') }}">Freq-Log vs Amount-Log </a>
+                    <a class="collapse-item" href="{{ url('/rfmChart5') }}">Rec-Log vs Amount-Log</a>
                 </div>
             </div>
         </li>
@@ -334,19 +350,19 @@
         </div>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/apriori') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Apriori 7 cluster</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/fpGrowth') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>FP-Growth</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/eclat">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Eclat 7 cluster</span></a>
         </li>
@@ -360,15 +376,15 @@
          </div>
  
          <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="{{ url('/datasetRFM') }}">
                  <i class="fas fa-fw fa-chart-area"></i>
                  <span>Dataset RFM 7 Cluster</span></a>
          </li>
  
          <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="{{ url('/datasetMBA') }}">
                  <i class="fas fa-fw fa-chart-area"></i>
-                 <span>Dataset RFM 7 Cluster</span></a>
+                 <span>Dataset MBA 7 Cluster</span></a>
          </li>          
 
             <!-- Divider -->
@@ -561,7 +577,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Haiii guysssss hehe</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
