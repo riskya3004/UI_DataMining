@@ -10,7 +10,7 @@
 
                 <h5 class="h5 mb-2 text-gray-800 font-weight-bold">QQ_plot_Frequency</h5>
                 {{-- Frequency--}}
-                <img src="content/rfmanalis/1. QQ PLOT RFM/QQ_plot_Frequency.png" alt="">
+                <img src="content/rfmanalis/1. QQ PLOT RFM/QQ_plot_Frequency.png" alt="" style="width: 900px">
                 <br>
 
                 </div>
