@@ -52,14 +52,14 @@
 
       <div class="w-100 overflow-hidden bg-gray-100" id="top">
   
-<div class="container position-relative">
-  <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left" style="background-image: url({{ asset('img/home.svg') }});">  </div>
-<div class="row">
+<div class="container position-relative" style="">
+  <div class="col-12 col-lg-8 mt-0  h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left" style="background-image: url({{ asset('img/home.svg') }}); margin-right: -100px">  </div>
+<div class="row" style=" padding-left:50px">
 
-<div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
+<div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right" style="margin-right: 1000px ">
   <h1 class="display-1 fw-bold mt-5" style="color:#4E73DF">Data Mining Project</h1>
   <p class="lead" style="color: #4E73DF; font-size:20px; font-weight:400">Customer Segmentation and Market Basket Analysis</p>
-  <a href="{{ url('/dashboard') }}" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5" style="background-color: #4E73DF">Get Started</a>
+  <a href="{{ url('/transactionPercentage1') }}" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5" style="background-color: #4E73DF">Get Started</a>
 </div>
 
 </div>

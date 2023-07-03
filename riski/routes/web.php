@@ -224,6 +224,9 @@ Route::get('/qqPlot3', function () {
 
 // Boxplot 
 // Amount
+Route::get('/rfmBoxplot_all_7_clusters', function () {
+    return view('rfm.boxplot_all_7_clusters');
+});
 Route::get('/rfmBoxplot_amount_all', function () {
     return view('rfm.boxplot_amount_all');
 });

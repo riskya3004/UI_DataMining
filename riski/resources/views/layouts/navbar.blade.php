@@ -47,11 +47,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            {{-- <li class="nav-item {{ Request::is('dashboard')? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -64,23 +64,28 @@
             </div>
 
             <!-- Nav Item - Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/transactionPercentage1') }}" data-toggle="collapse" data-target="#collapseTp"
+            {{-- @php
+                $isActive_transcPercentage = Request::is('transactionPercentage1', 'transactionPercentage2', 'transactionPercentage3') ? 'active' : '';
+            @endphp --}}
+            {{-- <li class="nav-item {{ Request::is('transactionPercentage1' || 'transactionPercentage2' || 'transactionPercentage3'   )? 'active' : '' }}"> --}}
+                {{-- {{ $isActive }} --}}
+            <li class="nav-item {{ Request::is('transactionPercentage1' , 'transactionPercentage2' , 'transactionPercentage3'   )? 'active' : '' }}">
+                <a class="nav-link collapsed {{ Request::is('transactionPercentage1')? 'active' : '' }}" href="{{ url('/transactionPercentage1') }}" data-toggle="collapse" data-target="#collapseTp"
                     aria-expanded="true" aria-controls="collapseTp">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Trasaction Percentage</span>
                 </a>
                 <div id="collapseTp" class="collapse" aria-labelledby="headingTp" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/transactionPercentage1') }}">In 2010 and 2011</a>
-                        <a class="collapse-item" href="{{ url('/transactionPercentage2') }}">By Month in 2010</a>
-                        <a class="collapse-item" href="{{ url('/transactionPercentage3') }}">By Month in 2011</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        <a class="collapse-item {{ Request::is('transactionPercentage1')? 'active' : '' }}" href="{{ url('/transactionPercentage1') }}">In 2010 and 2011</a>
+                        <a class="collapse-item {{ Request::is('transactionPercentage2')? 'active' : '' }}" href="{{ url('/transactionPercentage2') }}">By Month in 2010</a>
+                        <a class="collapse-item {{ Request::is('transactionPercentage3')? 'active' : '' }}" href="{{ url('/transactionPercentage3') }}">By Month in 2011</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('uniqueCustomer1' , 'uniqueCustomer2')? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/uniqueCustomer1') }}" data-toggle="collapse" data-target="#collapseUc"
                     aria-expanded="true" aria-controls="collapseUc">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -88,26 +93,26 @@
                 </a>
                 <div id="collapseUc" class="collapse" aria-labelledby="headingUc" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/uniqueCustomer1') }}">Month in 2011 bar chart</a>
-                        <a class="collapse-item" href="{{ url('/uniqueCustomer2') }}">Month in 2011 line chart </a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        <a class="collapse-item {{ Request::is('uniqueCustomer1')? 'active' : '' }}" href="{{ url('/uniqueCustomer1') }}">Month in 2011 bar chart</a>
+                        <a class="collapse-item {{ Request::is('uniqueCustomer2')? 'active' : '' }}" href="{{ url('/uniqueCustomer2') }}">Month in 2011 line chart </a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('amountSales')? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/amountSales') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Amount sales by country</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('internalExternalMarkert')? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/internalExternalMarkert') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Internal External Market</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('topCustomerall' , 'topCustomer1', 'topCustomer2', 'topCustomer3', 'topCustomer4', 'topCustomer5' )? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/topCustomerall') }}" data-toggle="collapse" data-target="#collapseTci"
                     aria-expanded="true" aria-controls="collapseTci">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -115,18 +120,18 @@
                 </a>
                 <div id="collapseTci" class="collapse" aria-labelledby="headingTci" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/topCustomerall') }}">Top_Customers_All</a>
-                        <a class="collapse-item" href="{{ url('/topCustomer1') }}">Top_Customers_10</a>
-                        <a class="collapse-item" href="{{ url('/topCustomer2') }}">Top_Customers_20</a>
-                        <a class="collapse-item" href="{{ url('/topCustomer3') }}">Top_Customers_30</a>
-                        <a class="collapse-item" href="{{ url('/topCustomer4') }}">Top_Customers_40</a>
-                        <a class="collapse-item" href="{{ url('/topCustomer5') }}">Top_Customers_50</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        <a class="collapse-item {{ Request::is('topCustomerall')? 'active' : '' }}" href="{{ url('/topCustomerall') }}">Top Customers All</a>
+                        <a class="collapse-item {{ Request::is('topCustomer1')? 'active' : '' }}" href="{{ url('/topCustomer1') }}">Top 10 Customers </a>
+                        <a class="collapse-item {{ Request::is('topCustomer2')? 'active' : '' }}" href="{{ url('/topCustomer2') }}">Top 20 Customers</a>
+                        <a class="collapse-item {{ Request::is('topCustomer3')? 'active' : '' }}" href="{{ url('/topCustomer3') }}">Top 30 Customers</a>
+                        <a class="collapse-item {{ Request::is('topCustomer4')? 'active' : '' }}" href="{{ url('/topCustomer4') }}">Top 40 Customers</a>
+                        <a class="collapse-item {{ Request::is('topCustomer5')? 'active' : '' }}" href="{{ url('/topCustomer5') }}">Top 50 Customers</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('topCostumerEventall' , 'topCostumerEvent1', 'topCostumerEvent2', 'topCostumerEvent3', 'topCostumerEvent4', 'topCostumerEvent5' )? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/topCostumerEventall') }}" data-toggle="collapse" data-target="#collapseTce"
                     aria-expanded="true" aria-controls="collapseTce">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -134,18 +139,19 @@
                 </a>
                 <div id="collapseTce" class="collapse" aria-labelledby="headingTce" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/topCostumerEventall') }}">TC_Event_Sales_All</a>
-                        <a class="collapse-item" href="{{ url('/topCostumerEvent1') }}">TC_Event_Sales_10</a>
-                        <a class="collapse-item" href="{{ url('/topCostumerEvent2') }}">TC_Event_Sales_20</a>
-                        <a class="collapse-item" href="{{ url('/topCostumerEvent3') }}">TC_Event_Sales_30</a>
-                        <a class="collapse-item" href="{{ url('/topCostumerEvent4') }}">TC_Event_Sales_40</a>
-                        <a class="collapse-item" href="{{ url('/topCostumerEvent5') }}">TC_Event_Sales_50</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        {{-- TC_Event_Sales_All ; TC_Event_Sales_10 --}}
+                        <a class="collapse-item {{ Request::is('topCostumerEventall')? 'active' : '' }}" href="{{ url('/topCostumerEventall') }}">Top All </a>
+                        <a class="collapse-item {{ Request::is('topCostumerEvent1')? 'active' : '' }}" href="{{ url('/topCostumerEvent1') }}">Top 10 Customer </a>
+                        <a class="collapse-item {{ Request::is('topCostumerEvent2')? 'active' : '' }}" href="{{ url('/topCostumerEvent2') }}">Top 20 Customer </a>
+                        <a class="collapse-item {{ Request::is('topCostumerEvent3')? 'active' : '' }}" href="{{ url('/topCostumerEvent3') }}">Top 30 Customer </a>
+                        <a class="collapse-item {{ Request::is('topCostumerEvent4')? 'active' : '' }}" href="{{ url('/topCostumerEvent4') }}">Top 40 Customer </a>
+                        <a class="collapse-item {{ Request::is('topCostumerEvent5')? 'active' : '' }}" href="{{ url('/topCostumerEvent5') }}">Top 50 Customer </a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('topProductall' , 'topProduct1', 'topProduct2', 'topProduct3', 'topProduct4', 'topProduct5' )? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/topProductall') }}" data-toggle="collapse" data-target="#collapseTpi"
                     aria-expanded="true" aria-controls="collapseTpi">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -153,18 +159,20 @@
                 </a>
                 <div id="collapseTpi" class="collapse" aria-labelledby="headingTpi" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/topProductall') }}">TP_Event_Sales_All</a>
-                        <a class="collapse-item" href="{{ url('/topProduct1') }}">TP_Event_Sales_10</a>
-                        <a class="collapse-item" href="{{ url('/topProduct2') }}">TP_Event_Sales_20</a>
-                        <a class="collapse-item" href="{{ url('/topProduct3') }}">TP_Event_Sales_30</a>
-                        <a class="collapse-item" href="{{ url('/topProduct4') }}">TP_Event_Sales_40</a>
-                        <a class="collapse-item" href="{{ url('/topProduct5') }}">TP_Event_Sales_50</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        {{-- TP_Event_Sales_All ; TP_Event_Sales_10 --}}
+                        <a class="collapse-item {{ Request::is('topProductall')? 'active' : '' }}" href="{{ url('/topProductall') }}">Top Product All </a>
+                        <a class="collapse-item {{ Request::is('topProduct1')? 'active' : '' }}" href="{{ url('/topProduct1') }}">Top 10 Product Sales</a>
+                        <a class="collapse-item {{ Request::is('topProduct2')? 'active' : '' }}" href="{{ url('/topProduct2') }}">Top 20 Product Sales</a>
+                        <a class="collapse-item {{ Request::is('topProduct3')? 'active' : '' }}" href="{{ url('/topProduct3') }}">Top 30 Product Sales</a>
+                        <a class="collapse-item {{ Request::is('topProduct4')? 'active' : '' }}" href="{{ url('/topProduct4') }}">Top 40 Product Sales</a>
+                        <a class="collapse-item {{ Request::is('topProduct5')? 'active' : '' }}" href="{{ url('/topProduct5') }}">Top 50 Product Sales </a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('mostSoldall' , 'mostSold1', 'mostSold2', 'mostSold3', 'mostSold4', 'mostSold5' )? 'active' : '' }}">
+                <li class="nav-item ">
                 <a class="nav-link collapsed" href="{{ url('/mostSoldall') }}" data-toggle="collapse" data-target="#collapseMsp"
                     aria-expanded="true" aria-controls="collapseMsp">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -172,18 +180,19 @@
                 </a>
                 <div id="collapseMsp" class="collapse" aria-labelledby="headingMsp" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/mostSoldall') }}">Most_Sold_Products_All</a>
-                        <a class="collapse-item" href="{{ url('/mostSold1') }}">Most_Sold_Products_10</a>
-                        <a class="collapse-item" href="{{ url('/mostSold2') }}">Most_Sold_Products_20</a>
-                        <a class="collapse-item" href="{{ url('/mostSold3') }}">Most_Sold_Products_30</a>
-                        <a class="collapse-item" href="{{ url('/mostSold4') }}">Most_Sold_Products_40</a>
-                        <a class="collapse-item" href="{{ url('/mostSold5') }}">Most_Sold_Products_50</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        {{-- Most_Sold_Products_All ; Most_Sold_Products_10 --}}
+                        <a class="collapse-item {{ Request::is('mostSoldall')? 'active' : '' }}" href="{{ url('/mostSoldall') }}">Most Sold Products All</a>
+                        <a class="collapse-item {{ Request::is('mostSold1')? 'active' : '' }}" href="{{ url('/mostSold1') }}">Most 10 Sold Products </a>
+                        <a class="collapse-item {{ Request::is('mostSold2')? 'active' : '' }}" href="{{ url('/mostSold2') }}">Most 20 Sold Products </a>
+                        <a class="collapse-item {{ Request::is('mostSold3')? 'active' : '' }}" href="{{ url('/mostSold3') }}">Most 30 Sold Products </a>
+                        <a class="collapse-item {{ Request::is('mostSold4')? 'active' : '' }}" href="{{ url('/mostSold4') }}">Most 40 Sold Products </a>
+                        <a class="collapse-item {{ Request::is('mostSold5')? 'active' : '' }}" href="{{ url('/mostSold5') }}">Most 50 Sold Products </a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('topProductSalesall' , 'topProductSales1', 'topProductSales2', 'topProductSales3', 'topProductSales4', 'topProductSales5' )? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/topProductSalesall') }}" data-toggle="collapse" data-target="#collapseTps"
                     aria-expanded="true" aria-controls="collapseTps">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -191,13 +200,14 @@
                 </a>
                 <div id="collapseTps" class="collapse" aria-labelledby="headingTps" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/topProductSalesall') }}">Top_Products_All</a>
-                        <a class="collapse-item" href="{{ url('/topProductSales1') }}">Top_Products_10</a>
-                        <a class="collapse-item" href="{{ url('/topProductSales2') }}">Top_Products_20</a>
-                        <a class="collapse-item" href="{{ url('/topProductSales3') }}">Top_Products_30</a>
-                        <a class="collapse-item" href="{{ url('/topProductSales4') }}">Top_Products_40</a>
-                        <a class="collapse-item" href="{{ url('/topProductSales5') }}">Top_Products_50</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        {{-- Top_Products_All ; Top_Products_10 --}}
+                        <a class="collapse-item {{ Request::is('topProductSalesall')? 'active' : '' }}" href="{{ url('/topProductSalesall') }}">Top Products All</a>
+                        <a class="collapse-item {{ Request::is('topProductSales1')? 'active' : '' }}" href="{{ url('/topProductSales1') }}">Top 10 Products</a>
+                        <a class="collapse-item {{ Request::is('topProductSales2')? 'active' : '' }}" href="{{ url('/topProductSales2') }}">Top 20 Products</a>
+                        <a class="collapse-item {{ Request::is('topProductSales3')? 'active' : '' }}" href="{{ url('/topProductSales3') }}">Top 30 Products</a>
+                        <a class="collapse-item {{ Request::is('topProductSales4')? 'active' : '' }}" href="{{ url('/topProductSales4') }}">Top 40 Products</a>
+                        <a class="collapse-item {{ Request::is('topProductSales5')? 'active' : '' }}" href="{{ url('/topProductSales5') }}">Top 50 Products</a>
                     </div>
                 </div>
             </li>
@@ -211,7 +221,7 @@
             </div>
 
             <!-- Nav Item - Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('chartCustomerall' , 'chartCustomer1', 'chartCustomer2', 'chartCustomer3' )? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/chartCustomerall') }}" data-toggle="collapse" data-target="#collapseC"
                     aria-expanded="true" aria-controls="collapseC">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -219,16 +229,17 @@
                 </a>
                 <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/chartCustomerall') }}">chart_All_clusters</a>
-                        <a class="collapse-item" href="{{ url('/chartCustomer1') }}">chart_3_clusters</a>
-                        <a class="collapse-item" href="{{ url('/chartCustomer2') }}">chart_5_clusters</a>
-                        <a class="collapse-item" href="{{ url('/chartCustomer3') }}">chart_7_clusters</a>
+                        <h6 class="collapse-header">Choose : </h6>
+                        {{-- chart_All_clusters ;  chart_3_clusters --}}
+                        {{-- <a class="collapse-item {{ Request::is('chartCustomerall')? 'active' : '' }}" href="{{ url('/chartCustomerall') }}">chart_All_clusters</a>
+                        <a class="collapse-item {{ Request::is('chartCustomer1')? 'active' : '' }} " href="{{ url('/chartCustomer1') }}">chart_3_clusters</a>
+                        <a class="collapse-item {{ Request::is('chartCustomer2')? 'active' : '' }}" href="{{ url('/chartCustomer2') }}">chart_5_clusters</a> --}}
+                        <a class="collapse-item {{ Request::is('chartCustomer3')? 'active' : '' }}" href="{{ url('/chartCustomer3') }}">chart 7 clusters</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('kmeansElbowall' , 'kmeansElbow1', 'kmeansElbow2')? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ url('/kmeansElbowall') }}" data-toggle="collapse" data-target="#collapseK"
                     aria-expanded="true" aria-controls="collapseK">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -236,21 +247,23 @@
                 </a>
                 <div id="collapseK" class="collapse" aria-labelledby="headingK" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pilih:</h6>
-                        <a class="collapse-item" href="{{ url('/kmeansElbowall') }}">kmeans_All</a>
-                        <a class="collapse-item" href="{{ url('/kmeansElbow1') }}">kmeans_cluster_plot</a>
-                        <a class="collapse-item" href="{{ url('/kmeansElbow2') }}">kmeans_elbow_plot</a>
+                        <h6 class="collapse-header">Choose :</h6>
+                        {{-- kmeans_All ; kmeans_elbow_plot ; kmeans_cluster_plot --}}
+                        <a class="collapse-item {{ Request::is('kmeansElbowall')? 'active' : '' }}" href="{{ url('/kmeansElbowall') }}">Kmeans All Plot</a>
+                        <a class="collapse-item {{ Request::is('kmeansElbow2')? 'active' : '' }}" href="{{ url('/kmeansElbow2') }}">Kmeans Elbow Plot</a>
+                        <a class="collapse-item {{ Request::is('kmeansElbow1')? 'active' : '' }}" href="{{ url('/kmeansElbow1') }}">Kmeans Cluster Plot</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('dbscan')? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/dbscan') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>DBSCAN</span></a>
+                    <span>DBSCAN</span>
+                </a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ url('/silhoutteScore1') }}" data-toggle="collapse" data-target="#collapseS"
                     aria-expanded="true" aria-controls="collapseS">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -263,7 +276,7 @@
                         <a class="collapse-item" href="{{ url('/silhoutteScore2') }}">Result Clusters</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -274,7 +287,7 @@
         </div>
 
         <!-- Nav Item - Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item {{ Request::is('qqPlotall' , 'qqPlot3', 'qqPlot1', 'qqPlot2')? 'active' : '' }}">
             <a class="nav-link collapsed" href="{{ url('/qqPlotall') }}" data-toggle="collapse" data-target="#collapseQ"
                 aria-expanded="true" aria-controls="collapseQ">
                 <i class="fas fa-fw fa-chart-area"></i>
@@ -282,23 +295,30 @@
             </a>
             <div id="collapseQ" class="collapse" aria-labelledby="headingQ" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Pilih:</h6>
-                    <a class="collapse-item" href="{{ url('/qqPlotall') }}">QQ_plot_All</a>
-                    <a class="collapse-item" href="{{ url('/qqPlot1') }}">QQ_plot_frequency</a>
-                    <a class="collapse-item" href="{{ url('/qqPlot2') }}">QQ_plot_monetory</a>
-                    <a class="collapse-item" href="{{ url('/qqPlot3') }}">QQ_plot Recency</a>
+                    <h6 class="collapse-header">Choose :</h6>
+                    <a class="collapse-item {{ Request::is('qqPlotall')? 'active' : '' }}" href="{{ url('/qqPlotall') }}">QQ plot All</a>
+                    <a class="collapse-item {{ Request::is('qqPlot3')? 'active' : '' }}" href="{{ url('/qqPlot3') }}">QQ plot Recency</a>
+                    <a class="collapse-item {{ Request::is('qqPlot1')? 'active' : '' }}" href="{{ url('/qqPlot1') }}">QQ plot frequency</a>
+                    <a class="collapse-item {{ Request::is('qqPlot2')? 'active' : '' }}" href="{{ url('/qqPlot2') }}">QQ plot monetory</a>
                 </div>
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('/rfmBoxplot_amount_all') }}" data-toggle="collapse" data-target="#collapserfmB"
+        <li class="nav-item {{ Request::is('rfmBoxplot_all_7_clusters' , 'rfmBoxplot_recency_3', 'rfmBoxplot_frequency_3', 'rfmBoxplot_amount_3')? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{{ url('/rfmBoxplot_all_7_clusters') }}" data-toggle="collapse" data-target="#collapserfmB"
                 aria-expanded="true" aria-controls="collapserfmB">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>RFM Boxplot</span>
             </a>
             <div id="collapserfmB" class="collapse" aria-labelledby="headingrfmB" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Choose :</h6>
+                    <a class="collapse-item {{ Request::is('rfmBoxplot_all_7_clusters')? 'active' : '' }}" href="{{ url('/rfmBoxplot_all_7_clusters') }}">RFM Boxplot All</a>
+                    <a class="collapse-item {{ Request::is('rfmBoxplot_recency_3')? 'active' : '' }}" href="{{ url('/rfmBoxplot_recency_3') }}">Recency Chart 7 Clusters</a>
+                    <a class="collapse-item {{ Request::is('rfmBoxplot_frequency_3')? 'active' : '' }}" href="{{ url('/rfmBoxplot_frequency_3') }}">Frequency Chart 7 Clusters</a>
+                    <a class="collapse-item {{ Request::is('rfmBoxplot_amount_3')? 'active' : '' }}" href="{{ url('/rfmBoxplot_amount_3') }}">Monetory Chart 7 Clusters</a>
+                </div>
+                {{-- <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Amount:</h6>
                     <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_all') }}">chart_amount_All</a>
                     <a class="collapse-item" href="{{ url('/rfmBoxplot_amount_1') }}">chart_amount_3_clusters</a>
@@ -318,11 +338,11 @@
                     <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_1') }}">chart_recency_3_clusters</a>
                     <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_2') }}">chart_recency_5_clusters</a>
                     <a class="collapse-item" href="{{ url('/rfmBoxplot_recency_3') }}">chart_recency_7_clusters</a>
-                </div>
+                </div> --}}
             </div>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item {{ Request::is('rfmChartall' , 'rfmChart1', 'rfmChart2', 'rfmChart3', 'rfmChart4', 'rfmChart5')? 'active' : '' }}">
             <a class="nav-link collapsed" href="{{ url('/rfmChartall') }}" data-toggle="collapse" data-target="#collapserfmc"
                 aria-expanded="true" aria-controls="collapserfmc">
                 <i class="fas fa-fw fa-chart-area"></i>
@@ -330,13 +350,13 @@
             </a>
             <div id="collapserfmc" class="collapse" aria-labelledby="headingrfmc" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Pilih:</h6>
-                    <a class="collapse-item" href="{{ url('/rfmChartall') }}">RFM Chart All</a>
-                    <a class="collapse-item" href="{{ url('/rfmChart1') }}">Frequency vs Amount</a>
-                    <a class="collapse-item" href="{{ url('/rfmChart2') }}">Receny vs Amount</a>
-                    <a class="collapse-item" href="{{ url('/rfmChart3') }}">RFM Log 3D</a>
-                    <a class="collapse-item" href="{{ url('/rfmChart4') }}">Freq-Log vs Amount-Log </a>
-                    <a class="collapse-item" href="{{ url('/rfmChart5') }}">Rec-Log vs Amount-Log</a>
+                    <h6 class="collapse-header">Choose :</h6>
+                    <a class="collapse-item {{ Request::is('rfmChartall')? 'active' : '' }}" href="{{ url('/rfmChartall') }}">RFM Chart All</a>
+                    <a class="collapse-item {{ Request::is('rfmChart1')? 'active' : '' }}" href="{{ url('/rfmChart1') }}">Frequency vs Amount</a>
+                    <a class="collapse-item {{ Request::is('rfmChart2')? 'active' : '' }}" href="{{ url('/rfmChart2') }}">Receny vs Amount</a>
+                    <a class="collapse-item {{ Request::is('rfmChart3')? 'active' : '' }}" href="{{ url('/rfmChart3') }}">RFM Log 3D</a>
+                    <a class="collapse-item {{ Request::is('rfmChart4')? 'active' : '' }}" href="{{ url('/rfmChart4') }}">Freq-Log vs Amount-Log </a>
+                    <a class="collapse-item {{ Request::is('rfmChart5')? 'active' : '' }}" href="{{ url('/rfmChart5') }}">Rec-Log vs Amount-Log</a>
                 </div>
             </div>
         </li>
@@ -349,19 +369,19 @@
             Market Basket Analysis
         </div>
 
-        <li class="nav-item">
+        <li class="nav-item {{ Request::is('apriori')? 'active' : '' }}">
             <a class="nav-link" href="{{ url('/apriori') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Apriori 7 cluster</span></a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item {{ Request::is('fpGrowth')? 'active' : '' }}">
             <a class="nav-link" href="{{ url('/fpGrowth') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>FP-Growth</span></a>
+                <span>FP-Growth 7 clusters</span></a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item {{ Request::is('eclat')? 'active' : '' }}">
             <a class="nav-link" href="/eclat">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Eclat 7 cluster</span></a>
@@ -375,13 +395,13 @@
              Dataset Terbentuk
          </div>
  
-         <li class="nav-item">
+         <li class="nav-item {{ Request::is('datasetRFM')? 'active' : '' }}">
              <a class="nav-link" href="{{ url('/datasetRFM') }}">
                  <i class="fas fa-fw fa-chart-area"></i>
                  <span>Dataset RFM 7 Cluster</span></a>
          </li>
  
-         <li class="nav-item">
+         <li class="nav-item {{ Request::is('datasetMBA')? 'active' : '' }}">
              <a class="nav-link" href="{{ url('/datasetMBA') }}">
                  <i class="fas fa-fw fa-chart-area"></i>
                  <span>Dataset MBA 7 Cluster</span></a>
@@ -414,7 +434,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    {{-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -425,7 +445,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -455,7 +475,7 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        {{-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
@@ -503,10 +523,10 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        {{-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
@@ -569,18 +589,18 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            {{-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Haiii guysssss hehe</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
-                            </a>
+                            </a> --}}
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
